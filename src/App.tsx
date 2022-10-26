@@ -1,6 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 // import CreateBox from './components/CreateTag';
 import TagMain from './components/TagMain';
 // import SelectTag from './components/SelectTag';
@@ -20,6 +18,6 @@ function App() {
       </div>
     </div>
   );
-}
+
 
 export default App;
