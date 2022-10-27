@@ -6,8 +6,6 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { KnightPositionState } from './atom';
 
-import useGame from './useGame';
-
 const RenderSquare = ({
   i,
   position,
@@ -15,17 +13,12 @@ const RenderSquare = ({
   i: number;
   position: { x: number; y: number };
 }) => {
-  const moveKnight = useGame();
   const x = i % 8;
   const y = Math.floor(i / 8);
   const isKnightHere = x === position.x && y === position.y;
   const piece = isKnightHere ? <Knight /> : null;
   return (
-    <div
-      onClick={() => moveKnight({ x, y })}
-      key={i}
-      style={{ width: '12.5%', height: '12.5%' }}
-    >
+    <div key={i} style={{ width: '12.5%', height: '12.5%' }}>
       <BoardSquare position={{ x, y }}>{piece}</BoardSquare>
     </div>
   );
